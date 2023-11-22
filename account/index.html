@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="icon" href="./../assets/images/nobg-logo.webp">
+    <title>G4C8 Prostitute</title>
+    <style>
+@font-face {
+  font-family: Holtwood;
+  src: url(./../assets/fonts/HoltwoodOneSC-Regular.woff2);
+}
+@font-face {
+  font-family: Lalezar;
+  src: url(./../assets/fonts/Lalezar-Regular.woff2);
+}
+@font-face {
+  font-family: Quicksand-Light;
+  src: url(./../assets/fonts/Quicksand-Light.woff2);
+}
+@font-face {
+  font-family: Quicksand-Medium;
+  src: url(./../assets/fonts/Quicksand-Medium.woff2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #1C1C1C;
+    background-image: url("./../assets/images/bg-parttern.svg");
+    background-size: 200% 200%;
+    background-position: center bottom;
+    font-family: Quicksand-Medium;
+    overflow: overlay;
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: clamp(8px, 1vw, 12px);
+}
+::-webkit-scrollbar-track {
+    background-color: #A90011;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #FBEBD8;
+    border-radius: clamp(10px, 2vw, 15px);
+    border: clamp(3px, 0.5vw, 4px) solid #A90011;
+} 
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+
+
+#navigator--mobile {
+    display: none;
+    position: fixed;
+    top: clamp(20px, 2vw, 30px);
+    right: clamp(20px, 2vw, 30px);
+    background-color: #A90011;
+    border-radius: 50%;
+    border: clamp(1.8px, 0.2vw, 2.2px) solid #FBEBD8;
+    outline: clamp(4px, 0.5vw, 6px) solid #A90011;
+    padding: clamp(10px, 1vw, 15px);
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+#navigator--mobile:hover {
+    opacity: 1;
+}
+
+#navigator--mobile--icon {
+    color: #FBEBD8;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#navigator--mobile--checkbox {
+    border: 1px solid white;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#navigator {
+    width: clamp(250px, 25vw, 300px);
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 50px 0;
+    border-right: clamp(1.8px, 0.2vw, 2.2px) solid #FBEBD8;
+    outline: clamp(4px, 0.5vw, 6px) solid #A90011;
+    background-color: #A90011;
+    color: #FFFAEF;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.navigator--line {
+    background-color: #FBEBD8;
+    width: 60%;
+    height: clamp(0.8px, 0.2vw, 1.5px);
+    opacity: 0.85;
+    border-radius: 4px;
+}
+
+#navigator--logo {
+    width: clamp(85px, 8.5vw, 120px);
+    height: clamp(85px, 8.5vw, 120px);
+    outline: clamp(3.5px, 0.5vw, 5px) solid #FBEBD8;
+    border: clamp(2px, 0.5vw, 2.5px) solid #A90011;
+    border-radius: 50%;
+    padding: clamp(10px, 1vw, 15px);
+    margin-bottom: clamp(20px, 2vw, 30px);
+    background-color: #FBEBD8;
+}
+
+.navigator--title {
+    font-size: clamp(30px, 3vw, 50px);
+    font-family: Lalezar;
+    letter-spacing: clamp(1px, 0.1vw, 2px);
+    text-shadow: 0 0 clamp(4px, 0.5vw, 5px) #FFFAEF;
+    text-align: center;
+}
+
+.navigator--subtitle {
+    font-size: clamp(14px, 1.2vw, 16px);
+    font-family: Quicksand-Light;
+    letter-spacing: clamp(0.5px, 0.1vw, 1px);
+    text-align: center;
+    margin-bottom: clamp(30px, 3vw, 45px);
+}
+
+#navigator--list {
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    list-style-type: none;
+    margin: clamp(15px, 3vw, 20px) 0;
+}
+
+.navigator--list--item {
+    color: #FBEBD8;
+    font-size: clamp(16px, 1.5vw, 18px);
+    font-family: Quicksand-Medium;
+    letter-spacing: clamp(0.8px, 0.1vw, 1.86px);
+    text-align: center;
+
+    width: 100%;
+    height: auto;
+    padding: clamp(16px, 1.5vw, 18px) 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.navigator--list--item:hover {
+    color: #FFFAEF;
+    text-shadow: 0 0 clamp(3px, 0.5vw, 5px) #FFFAEF;
+    background-color: #FBEBD820;
+}
+
+.navigator--copyright {
+    font-size: clamp(14px, 1.2vw, 16px);
+    font-family: Quicksand-Light;
+    letter-spacing: clamp(0.5px, 0.1vw, 1px);
+    text-align: center;
+    margin-top: clamp(30px, 3vw, 45px);
+}
+
+
+
+#main {
+    width: calc(100% - clamp(250px, 25vw, 300px));
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: clamp(250px, 25vw, 300px);
+}
+
+.main--line {
+    background-color: #FBEBD8;
+    width: 50%;
+    height: clamp(0.8px, 0.2vw, 1.5px);
+    opacity: 0.85;
+    border-radius: 4px;
+}
+
+
+
+#header {
+    width: 100%;
+    height: 100%;
+}
+
+#header--banner {
+    width: 100%;
+    height: auto;
+    border-bottom: clamp(3px, 0.3vw, 5px) solid #A9001195;
+}
+
+
+
+#overview {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: clamp(50px, 7vw, 150px) 0;
+}
+
+.overview--title {
+    color: #FFFAEF;
+    font-size: clamp(20px, 2vw, 30px);
+    font-family: Lalezar;
+    letter-spacing: clamp(3px, 0.5vw, 5px);
+    line-height: 2;
+    text-shadow: 0 0 clamp(4px, 0.5vw, 5px) #FFFAEF;
+    text-align: center;
+    margin: 0 clamp(20px, 2vw, 30px);
+}
+
+.overview--subtitle {
+    color: #FBEBD8;
+    font-size: clamp(12px, 1vw, 16px);
+    font-family: Quicksand-Light;
+    letter-spacing: clamp(1px, 0.1vw, 2px);
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 clamp(30px, 3vw, 50px) clamp(30px, 3vw, 50px) clamp(50px, 7vw, 100px);
+}
+
+#overview--container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.overview--card {
+    width: clamp(250px, 25vw, 320px);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: clamp(1px, 0.2vw, 2px) solid transparent;
+    padding: clamp(15px, 2vw, 20px);
+    margin: clamp(20px, 2vw, 25px);
+    transition: 0.3s;
+}
+
+.overview--card:hover {
+    background-color: #1C1C1C;
+    border-radius: clamp(8px, 1vw, 12px);
+    border: clamp(1px, 0.2vw, 2px) solid #FBEBD8;
+    box-shadow: 0 0 clamp(10px, 1vw, 15px) #D11D27;
+}
+
+.overview--card--icon {
+    width: clamp(100px, 10vw, 120px);
+    height: clamp(100px, 10vw, 120px);
+    margin-bottom: clamp(15px, 2vw, 30px);
+    filter: drop-shadow(0 0 clamp(2px, 0.2vw, 3px) #D11D27);
+}
+
+.overview--card--title {
+    color: #FBEBD8;
+    font-size: clamp(18px, 2vw, 25px);
+    font-family: Lalezar;
+    letter-spacing: clamp(1px, 0.1vw, 3px);
+    text-align: center;
+}
+
+.overview--card--subtitle {
+    color: #FBEBD8;
+    font-size: clamp(12px, 1vw, 16px);
+    font-family: Quicksand-Light;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+
+#gallery {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: clamp(50px, 7vw, 150px) 0;
+}
+
+.gallery--title {
+    color: #FFFAEF;
+    font-size: clamp(20px, 2vw, 30px);
+    font-family: Lalezar;
+    letter-spacing: clamp(3px, 0.5vw, 5px);
+    line-height: 2;
+    text-shadow: 0 0 clamp(4px, 0.5vw, 5px) #FFFAEF;
+    text-align: center;
+    margin: 0 clamp(20px, 2vw, 30px);
+}
+
+.gallery--subtitle {
+    color: #FBEBD8;
+    font-size: clamp(12px, 1vw, 16px);
+    font-family: Quicksand-Light;
+    letter-spacing: clamp(1px, 0.1vw, 2px);
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 clamp(30px, 3vw, 50px);
+}
+
+#gallery--banner {
+    width: clamp(300px, 60vw, 800px);
+    height: auto;
+    margin: clamp(30px, 3vw, 50px);
+    border-radius: clamp(4px, 0.5vw, 8px);
+    outline: clamp(2px, 0.3vw, 2.3px) solid #FBEBD8;
+    border: clamp(3.5px, 0.5vw, 5px) solid transparent;
+    box-shadow: 0 0 clamp(8px, 1vw, 12px) #D11D27;
+}
+
+
+
+#product {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: clamp(50px, 7vw, 150px) 0;
+}
+
+.product--title {
+    color: #FFFAEF;
+    font-size: clamp(20px, 2vw, 30px);
+    font-family: Lalezar;
+    letter-spacing: clamp(3px, 0.5vw, 5px);
+    line-height: 2;
+    text-shadow: 0 0 clamp(4px, 0.5vw, 5px) #FFFAEF;
+    text-align: center;
+    margin: 0 clamp(20px, 2vw, 30px);
+}
+
+.product--subtitle {
+    color: #FBEBD8;
+    font-size: clamp(12px, 1vw, 16px);
+    font-family: Quicksand-Light;
+    letter-spacing: clamp(1px, 0.1vw, 2px);
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 clamp(30px, 3vw, 50px);
+}
+
+#product--container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.product--card {
+    width: clamp(250px, 30vw, 380px);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: clamp(1px, 0.2vw, 2px) solid transparent;
+    padding: clamp(20px, 2vw, 30px);
+    margin: clamp(20px, 2vw, 30px);
+    transition: 0.3s;
+}
+
+.product--card:hover {
+    background-color: #11111190;
+    border-radius: clamp(8px, 1vw, 12px);
+    border: clamp(1px, 0.2vw, 2px) solid #FBEBD8;
+    box-shadow: 0 0 clamp(10px, 1vw, 15px) #D11D27;
+}
+
+.product--card:hover > .product--card--image {
+    filter: drop-shadow(0 0 clamp(2px, 0.2vw, 3px) #D11D27);
+}
+
+.product--card--image {
+    width: clamp(150px, 20vw, 250px);
+    height: clamp(150px, 20vw, 250px);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.product--card--title {
+    color: #FBEBD8;
+    font-size: clamp(18px, 2vw, 25px);
+    font-family: Lalezar;
+    letter-spacing: clamp(1px, 0.1vw, 3px);
+    text-align: center;
+    margin: clamp(10px, 1vw, 20px) 0;
+}
+
+.product--card--description {
+    color: #FBEBD8;
+    font-size: clamp(12px, 1vw, 16px);
+    font-family: Quicksand-Light;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.product--card--button {
+    color: #FBEBD8;
+    font-size: clamp(12px, 1.5vw, 16px);
+    font-family: Quicksand-Medium;
+    text-align: center;
+    width: clamp(180px, 20vw, 250px);
+    border-radius: clamp(25px, 3vw, 40px);
+    border: clamp(1px, 0.2vw, 2px) solid #FBEBD8;
+    padding: clamp(5px, 1vw, 8px);
+    margin-top: clamp(20px, 2vw, 30px);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product--card--button:hover {
+    color: #1F1F1F;
+    background-color: #FBEBD8;
+    box-shadow: 0 0 clamp(5px, 1vw, 8px) #D11D27;
+}
+
+
+
+#footer {
+    width: 100%;
+    height: auto;
+    background-color: #A90011;
+    background-image: url("./../assets/images/whiteBGP-waveLine.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+    padding: clamp(30px, 3vw, 50px);
+    margin-top: clamp(100px, 15vw, 250px);
+    border-top: clamp(2px, 0.3vw, 2.3px) solid #FBEBD8;
+    box-shadow: 0 0 clamp(8px, 1vw, 12px) #D11D27;
+}
+
+.footer--line {
+    background-color: #FBEBD8;
+    width: 50%;
+    height: clamp(0.8px, 0.2vw, 1.5px);
+    opacity: 0.85;
+    border-radius: 4px;
+}
+
+.footer--title {
+    color: #FFFAEF;
+    font-size: clamp(24px, 2vw, 30px);
+    font-family: Lalezar;
+    letter-spacing: clamp(1px, 0.1vw, 3px);
+    text-shadow: 0 0 clamp(2px, 0.5vw, 4px) #FFFAEF;
+    text-align: left;
+    margin: clamp(10px, 1vw, 20px) 0 clamp(10px, 1vw, 20px) clamp(5px, 0.5vw, 10px);
+}
+
+#footer--imageContainer {
+    margin: 0 clamp(20px, 2.5vw, 30px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.footer--image {
+    width: clamp(120px, 15vw, 200px);
+    height: clamp(120px, 15vw, 200px);
+    outline: clamp(3.5px, 0.5vw, 5px) solid #FBEBD8;
+    border: clamp(2px, 0.5vw, 2.5px) solid #A90011;
+    border-radius: 50%;
+    padding: clamp(10px, 1vw, 15px);
+    margin: clamp(20px, 2vw, 30px);
+    background-color: #FBEBD8;
+}
+
+#footer--contact {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#footer--contact--table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: clamp(20px, 2vw, 30px) 0;
+}
+
+#footer--contact--table td:first-child {
+    color: #FBEBD8;
+    font-size: clamp(15px, 1.5vw, 18px);
+    font-family: Quicksand-Medium;
+    font-weight: 600;
+    letter-spacing: clamp(0.5px, 0.1vw, 2px);
+    text-align: left;
+    padding: clamp(5px, 0.5vw, 10px) clamp(20px, 2vw, 50px);
+}
+
+#footer--contact--table td:last-child {
+    color: #FBEBD8;
+    font-size: clamp(15px, 1.5vw, 18px);
+    font-family: Quicksand-Light;
+    text-align: left;
+    padding: clamp(5px, 0.5vw, 10px) clamp(20px, 2vw, 50px);
+}
+
+#footer--contact--iconContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: clamp(20px, 2vw, 30px) 0;
+}
+
+.footer--contact--icon {
+    color: #FBEBD8;
+    margin: 0 clamp(10px, 1vw, 25px);
+    opacity: 0.95;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer--contact--icon:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 clamp(1px, 0.2vw, 2px) #FFFAEF);
+}
+
+.footer--contact--copyright {
+    color: #FFFAEF;
+    font-size: clamp(12px, 1.2vw, 15px);
+    font-family: Quicksand-Light;
+    text-align: center;
+    padding: clamp(5px, 0.5vw, 10px);
+}
+
+
+
+@media screen and (max-width: 800px) {
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#navigator--mobile {
+    display: block;
+}
+
+#navigator {
+    left: -100%;
+    opacity: 0.95;
+}
+
+#main {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+}
+    </style>
+</head>
+<body>
+    
+<div id="navigator--mobile">
+    <input id="navigator--mobile--checkbox" type="checkbox"/>
+    <iconify-icon id="navigator--mobile--icon" icon="ep:menu" height="clamp(30px, 3vw, 50px)" width="clamp(30px, 3vw, 50px)"></iconify-icon>
+</div>
+
+<div id="navigator">
+    <img id="navigator--logo" src="./../assets/images/nobg-logo.webp"/>
+    <p class="navigator--title">G4C8</p>
+    <p class="navigator--subtitle">10C08 - Prostitute Center</p>
+
+    <span class="navigator--line"></span>
+
+    <ul id="navigator--list">
+        <li class="navigator--list--item" id="navigator--main">TRANG CHỦ</li>
+        <li class="navigator--list--item" id="navigator--store">CỬA HÀNG</li>
+        <li class="navigator--list--item" id="navigator--account">TÀI KHOẢN</li>
+    </ul>
+    
+    <span class="navigator--line"></span>
+
+    <p class="navigator--copyright">© 2023 - <strong>MinhQuan08</strong></p>
+</div>
+
+
+<div id="main">
+    <div id="header">
+        <img id="header--banner" src="./../assets/images/main-banner.webp"/>
+    </div>
+
+
+
+    <div id="footer">
+        <div id="footer--imageContainer">
+            <img class="footer--image" src="./../assets/images/nobg-logo.webp">
+        </div>
+
+        <div id="footer--contact">
+            <p class="footer--title">Thông tin liên hệ</p>
+            <span class="footer--line"></span>
+            <table id="footer--contact--table">
+                <tr>
+                    <td>Instagram</td>
+                    <td>quannguyenminh8587</td>
+                </tr>
+                <tr>
+                    <td>Facebook</td>
+                    <td>Nguyễn Minh Quân</td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td>@NguynMinhQun891</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>ngmquan*@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Zalo</td>
+                    <td>076 8184 492</td>
+                </tr>
+            </table>
+            
+            <span class="footer--line"></span>
+
+            <div id="footer--contact--iconContainer">
+                <iconify-icon class="footer--contact--icon" width="clamp(25px, 3vw, 40px)" height="clamp(25px, 3vw, 40px)" icon="el:phone-alt"></iconify-icon>
+                <iconify-icon class="footer--contact--icon" width="clamp(25px, 3vw, 40px)" height="clamp(25px, 3vw, 40px)" icon="icomoon-free:mail4"></iconify-icon>
+                <iconify-icon class="footer--contact--icon" width="clamp(25px, 3vw, 40px)" height="clamp(25px, 3vw, 40px)" icon="bi:facebook"></iconify-icon>
+                <iconify-icon class="footer--contact--icon" width="clamp(25px, 3vw, 40px)" height="clamp(25px, 3vw, 40px)" icon="formkit:twitter"></iconify-icon>
+                <iconify-icon class="footer--contact--icon" width="clamp(25px, 3vw, 40px)" height="clamp(25px, 3vw, 40px)" icon="bi:github"></iconify-icon>
+            </div>
+
+            <p class="footer--contact--copyright">- CopyRight © 2023 MinhQuan08 -</p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(() => {
+    $("#navigator--mobile--checkbox").click(() => {
+        const nav = $("#navigator");
+        const state = nav.css("left");
+
+        state == "0px" ? nav.css("left", "-100%") : nav.css("left", "0");
+    });
+
+    $("#navigator--main").click(() => {
+        $(location).prop("href", "./../");
+    });
+
+    $("#navigator--store").click(() => {
+        $(location).prop("href", "./");
+    });
+
+    $("#navigator--account").click(() => {
+        $(location).prop("href", "./../account");
+    });
+});
+
+$(window).on("resize", () => {
+    const nav = $("#navigator");
+    $(this).width() < 800 ? nav.css("left", "-100%") : nav.css("left", "0");
+});
+</script>
+</body>
+</html>
